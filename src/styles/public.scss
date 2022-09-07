@@ -1,0 +1,97 @@
+html {
+  font-size: 4px; // * 1rem = 4px  方便unocss计算：在unocss中 1字体单位 = 0.25rem，相当于 1等份 = 1px
+}
+
+/* scrollbar-primary */
+/* to fix scrollbar global css style*/
+.scrollbar-primary {
+  &::-webkit-scrollbar-track-piece {
+    background: rgba(0, 0, 0, 0);
+  }
+  // scrollbar width
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  // scrollbar thumb
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+  }
+}
+
+/* scrollbar-hover */
+/* to fix scrollbar global css style*/
+.scrollbar-hover {
+  &::-webkit-scrollbar-track-piece {
+    background: transparent;
+  }
+  // scrollbar width
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  // scrollbar thumb
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 20px;
+  }
+
+  &:hover::-webkit-scrollbar-track-piece {
+    background: rgba(0, 0, 0, 0);
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* input placeholder color */
+// WebKit browsers
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #cacaca;
+}
+// Mozilla Firefox 4 to 18
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #cacaca;
+}
+// ozilla Firefox 19+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #cacaca;
+}
+// Internet Explorer 10+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #cacaca;
+}
+
+// 0.5 border-bottom
+.half-border-bottom {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scaleY(0.5);
+  }
+}
+// 0.5 border-top
+.half-border-top {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scaleY(0.5);
+  }
+}

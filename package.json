@@ -1,0 +1,84 @@
+{
+  "name": "lucky-chat",
+  "private": true,
+  "version": "0.0.0",
+  "main": "electron/main.js",
+  "description": "web chat",
+  "author": "lucky mouse",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron": "wait-on tcp:3000 && cross-env NODE_ENV=development electron .",
+    "electron:serve": "concurrently -k \"npm run dev\" \"npm run electron\"",
+    "electron:build": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "@/lucky-mouse/customer-service-chat",
+    "productName": "Customer Service Chat",
+    "copyright": "Copyright @ 2022 ${author}",
+    "mac": {
+      "icon": "./public/logo.ico"
+    },
+    "win": {
+      "icon": "./public/logo.ico"
+    },
+    "linux": {
+      "icon": "./public/logo.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./public/favicon.ico",
+      "uninstallerIcon": "./public/favicon.ico",
+      "installerHeaderIcon": "./public/favicon.ico"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "output"
+    }
+  },
+  "dependencies": {
+    "@vueuse/core": "^9.2.0",
+    "dayjs": "^1.11.5",
+    "jsencrypt": "^3.2.1",
+    "lodash-es": "^4.17.21",
+    "pinia": "^2.0.21",
+    "vue": "^3.2.37",
+    "vue-router": "^4.0.15"
+  },
+  "devDependencies": {
+    "@iconify-json/icon-park-outline": "^1.1.5",
+    "@iconify/vue": "^3.2.1",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "@vue/compiler-sfc": "^3.2.33",
+    "chalk": "^5.0.1",
+    "concurrently": "^7.3.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.2",
+    "electron": "^20.1.1",
+    "electron-builder": "^23.3.3",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.4.0",
+    "esno": "^0.16.3",
+    "fs-extra": "^10.1.0",
+    "naive-ui": "^2.33.2",
+    "prettier": "^2.7.1",
+    "rollup-plugin-visualizer": "^5.8.1",
+    "sass": "^1.54.8",
+    "unocss": "^0.45.18",
+    "unplugin-auto-import": "^0.11.2",
+    "unplugin-icons": "^0.14.9",
+    "unplugin-vue-components": "^0.22.4",
+    "vite": "^3.1.0",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "wait-on": "^6.0.1"
+  }
+}

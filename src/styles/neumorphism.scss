@@ -1,0 +1,122 @@
+/* 新拟态样式 */
+$default-light: #8abdff;
+$default-color: #6d5dfc;
+$default-dark: #5b0eeb;
+$default-white: #ffffff;
+$grey-light1: #e4ebf5;
+$grey-light2: #c8d0e7;
+$grey-light3: #bec8e4;
+$grey-dark: #9baacf;
+
+// neumorphism--color
+.neumorphism--color {
+  color: $default-dark;
+}
+// neumorphism--bg
+.neumorphism--bg {
+  background-color: $grey-light1;
+}
+// neumorphism--shadow
+.neumorphism--shadow {
+  box-shadow: 3px 3px 6px $grey-light2, -2px -2px 5px $default-white;
+}
+// neumorphism--card
+.neumorphism--card {
+  border-radius: 8px;
+  background-color: $grey-light1;
+  box-shadow: 3px 3px 6px $grey-light2, -2px -2px 5px $default-white;
+}
+// neumorphism--card-dark
+.neumorphism--card-dark {
+  border-radius: 8px;
+  color: $default-white;
+  background-color: $default-color;
+  box-shadow: 3px 3px 6px $grey-light2, -2px -2px 5px $default-white;
+}
+// neumorphism--card-hover
+.neumorphism--card-hover {
+  transition: all 0.3s ease;
+  &:hover {
+    color: $default-dark;
+  }
+}
+// neumorphism--card-active
+.neumorphism--card-active {
+  &:active {
+    box-shadow: inset 2px 2px 5px $grey-light2, inset -2px -2px 5px $default-white;
+  }
+}
+// neumorphism--card-current
+.neumorphism--card-current {
+  &.current {
+    box-shadow: inset 2px 2px 5px $grey-light2, inset -2px -2px 5px $default-white;
+    color: $default-dark;
+  }
+}
+// neumorphism--tabs
+.neumorphism--tabs {
+  .neumorphism--tabs-content {
+    box-shadow: 3px 3px 6px $grey-light2, -2px -2px 5px $default-white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: $grey-light1;
+    border-radius: 8px;
+    position: relative;
+  }
+}
+// neumorphism--tabs-items
+.neumorphism--tabs-item {
+  flex: 1;
+  max-width: 100%;
+  min-width: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: $grey-light2;
+  transition: all 0.25s;
+  &:hover {
+    color: $default-color;
+  }
+  &.current {
+    color: $default-color;
+  }
+}
+// neumorphism--tabs-control
+.neumorphism--tabs-control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 5px $grey-light2, inset -2px -2px 5px $default-white;
+  pointer-events: none;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+// neumorphism--button
+.neumorphism--button {
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: inset 2px 2px 10px $default-light, inset -2px -2px 10px $default-dark, 3px 3px 6px $grey-light2,
+    -2px -2px 5px $default-white;
+  color: $grey-light1;
+  background-color: $default-color;
+  padding: 5px;
+  transition: all 0.25s;
+  &:active {
+    box-shadow: inset 2px 2px 10px $default-dark, inset -2px -2px 10px $default-light;
+  }
+}
+// neumorphism--input
+.neumorphism--input {
+  font-size: 16px;
+  color: $default-color;
+  border-radius: 8px;
+  background-color: $grey-light1;
+  box-shadow: inset 2px 2px 5px $grey-light2, inset -2px -2px 5px $default-white;
+}
